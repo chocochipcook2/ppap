@@ -63,17 +63,19 @@ export default function Home() {
           )}
         </div>
 
-        <div className='flex flex-row justify-start items-center'>
+        <div className='flex flex-row flex-1 justify-start items-center'>
           {chartType ? (
-            <TickerChart />
+            <TickerChart pair='BTC-ETC' />
           ) : (
             <AssetChart as1={as1} as2={as2} as3={as3} />
           )}
-          <div className='pt-5 text-black text-right'>
-            {[as1, as2, as3].map((val, idx) => (
-              <p className=' text-sm '>{val + ' USD'}</p>
-            ))}
-          </div>
+          {!chartType && (
+            <div className='pt-5 text-black text-right'>
+              {[as1, as2, as3].map((val, idx) => (
+                <p className=' text-sm '>{val + ' USD'}</p>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <div className='flex flex-2 w-full flex-row m-2 rounded-lg shadow-md bg-green-200'>
