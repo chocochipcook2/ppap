@@ -56,7 +56,7 @@ const TickerChart = (props: any) => {
   }, []);
 
   return (
-    <div className='TickerChart w-full h-full'>
+    <div className='TickerChart flex-1'>
       <Chart type='line' data={data} options={options} ref={tickerChartRef} />
     </div>
   );

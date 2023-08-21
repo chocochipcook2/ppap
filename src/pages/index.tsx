@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { AssetChart, TickerChart } from '@/components';
+import { AssetChart, NetworkBalance, TickerChart } from '@/components';
 import React from 'react';
+import { TabTable } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -65,7 +66,7 @@ export default function Home() {
 
         <div className='flex flex-row flex-1 justify-start items-center'>
           {chartType ? (
-            <TickerChart pair='BTC-ETC' />
+            <TickerChart pair='KRW-ETH' />
           ) : (
             <AssetChart as1={as1} as2={as2} as3={as3} />
           )}
@@ -78,11 +79,11 @@ export default function Home() {
           )}
         </div>
       </div>
-      <div className='flex flex-2 w-full flex-row m-2 rounded-lg shadow-md bg-green-200'>
-        c
+      <div className='flex flex-2 w-full flex-row p-5 m-2 rounded-lg shadow-md '>
+        <NetworkBalance />
       </div>
-      <div className='flex flex-4 w-full  m-2 rounded-lg shadow-md bg-yellow-200'>
-        d
+      <div className='flex flex-4 w-full  m-2 rounded-lg shadow-md '>
+        <TabTable />
       </div>
     </main>
   );
