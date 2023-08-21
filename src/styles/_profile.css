@@ -1,0 +1,3 @@
+.gray_button {
+  @apply rounded-xl p-1 px-4 bg-slate-400;
+}
